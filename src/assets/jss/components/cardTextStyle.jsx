@@ -5,7 +5,7 @@ import {
   infoCardHeader,
   primaryCardHeader,
   roseCardHeader
-} from "assets/jss/material-dashboard-pro-react.jsx";
+} from "../defaultCss";
 
 const cardTextStyle = {
   cardText: {

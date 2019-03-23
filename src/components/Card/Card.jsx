@@ -29,7 +29,6 @@ function Card({...props}) {
     ...rest
   } = props;
 
-  console.log(raised);
 
   const cardClasses = classNames({
     [classes.card]: true,

@@ -144,7 +144,7 @@ const cardStyle = {
     color: "#FFFFFF"
   },
   rose: {
-    background: "linear-gradient(60deg,#f50057,#ff1744)",
+    background: "linear-gradient(60deg, #71B280,#134E5E)",
     "& h1 small": {
       color: "rgba(255, 255, 255, 0.8)"
     },

@@ -8,22 +8,18 @@ import card3 from "../assets/img/card-3.jpeg";
 import GridContainer from "../components/Grid/GridContainer";
 import GridItem from "../components/Grid/GridItem";
 import CardBody from "../components/Card/CardBody";
-import CardFooter from "../components/Card/CardFooter";
 import Card from "../components/Card/Card";
 import CardHeader from "../components/Card/CardHeader";
 import Tooltip from "@material-ui/core/Tooltip";
-
-
-import Refresh from "@material-ui/icons/Refresh";
 import Edit from "@material-ui/icons/Edit";
 
 import ArtTrack from "@material-ui/icons/ArtTrack";
 
-import {
-
-  cardTitle
-} from "../assets/jss/defaultCss";
+import {cardTitle} from "../assets/jss/defaultCss";
 import Button from "../components/CustomButtons/Button";
+import Grid from "@material-ui/core/Grid";
+import Timeline from "../components/TimeLine/Timeline";
+import {stories} from "../FakeData/Stories";
 
 
 const style = theme => ({
@@ -81,153 +77,166 @@ class MainPage extends React.Component {
 
     } = this.props;
 
+
     return (
+      <Grid>
 
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={4}>
+            <Card product className={classes.cardHover} color={'rose'}>
+              <CardHeader image className={classes.cardHeaderHover}>
 
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={4}>
-          <Card product className={classes.cardHover} color={'rose'}>
-            <CardHeader image className={classes.cardHeaderHover}>
+                <img src={card1} alt="..."/>
 
-              <img src={card1} alt="..."/>
+              </CardHeader>
 
-            </CardHeader>
+              <CardBody>
+                <div className={classes.cardHoverUnder}>
+                  <Tooltip
+                    id="tooltip-top"
+                    title="View"
+                    placement="bottom"
+                    classes={{tooltip: classes.tooltip}}>
+                    <Button color="twitter" simple justIcon>
+                      <ArtTrack className={classes.underChartIcons}/>
+                    </Button>
+                  </Tooltip>
 
-            <CardBody>
-              <div className={classes.cardHoverUnder}>
-                <Tooltip
-                  id="tooltip-top"
-                  title="View"
-                  placement="bottom"
-                  classes={{tooltip: classes.tooltip}}>
-                  <Button color="transparent" simple justIcon>
-                    <ArtTrack className={classes.underChartIcons}/>
-                  </Button>
-                </Tooltip>
+                  <Tooltip
+                    id="tooltip-top"
+                    title="Edit"
+                    placement="bottom"
+                    classes={{tooltip: classes.tooltip}}>
+                    <Button color="primary" simple justIcon>
+                      <Edit className={classes.underChartIcons}/>
+                    </Button>
+                  </Tooltip>
+                </div>
+                <h4 className={classes.cardProductTitle}>
 
-                <Tooltip
-                  id="tooltip-top"
-                  title="Edit"
-                  placement="bottom"
-                  classes={{tooltip: classes.tooltip}}>
-                  <Button color="danger" simple justIcon>
-                    <Edit className={classes.underChartIcons}/>
-                  </Button>
-                </Tooltip>
-              </div>
-              <h4 className={classes.cardProductTitle}>
+                  <p>
+                    Title
+                  </p>
 
-                <p>
-                  Title
+                </h4>
+                <p className={classes.cardProductDescription}>
+
+                  Description
+
                 </p>
+              </CardBody>
 
-              </h4>
-              <p className={classes.cardProductDescription}>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
+            <Card product className={classes.cardHover} color={'rose'}>
+              <CardHeader image className={classes.cardHeaderHover}>
 
-                Description
+                <img src={card2} alt="..."/>
 
-              </p>
-            </CardBody>
+              </CardHeader>
 
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-          <Card product className={classes.cardHover} color={'rose'}>
-            <CardHeader image className={classes.cardHeaderHover}>
+              <CardBody>
+                <div className={classes.cardHoverUnder}>
+                  <Tooltip
+                    id="tooltip-top"
+                    title="View"
+                    placement="bottom"
+                    classes={{tooltip: classes.tooltip}}>
+                    <Button color="twitter" simple justIcon>
+                      <ArtTrack className={classes.underChartIcons}/>
+                    </Button>
+                  </Tooltip>
 
-              <img src={card2} alt="..."/>
+                  <Tooltip
+                    id="tooltip-top"
+                    title="Edit"
+                    placement="bottom"
+                    classes={{tooltip: classes.tooltip}}>
+                    <Button color="primary" simple justIcon>
+                      <Edit className={classes.underChartIcons}/>
+                    </Button>
+                  </Tooltip>
+                </div>
+                <h4 className={classes.cardProductTitle}>
 
-            </CardHeader>
+                  <p>
+                    Title
+                  </p>
 
-            <CardBody>
-              <div className={classes.cardHoverUnder}>
-                <Tooltip
-                  id="tooltip-top"
-                  title="View"
-                  placement="bottom"
-                  classes={{tooltip: classes.tooltip}}>
-                  <Button color="transparent" simple justIcon>
-                    <ArtTrack className={classes.underChartIcons}/>
-                  </Button>
-                </Tooltip>
+                </h4>
+                <p className={classes.cardProductDescription}>
 
-                <Tooltip
-                  id="tooltip-top"
-                  title="Edit"
-                  placement="bottom"
-                  classes={{tooltip: classes.tooltip}}>
-                  <Button color="danger" simple justIcon>
-                    <Edit className={classes.underChartIcons}/>
-                  </Button>
-                </Tooltip>
-              </div>
-              <h4 className={classes.cardProductTitle}>
+                  Description
 
-                <p>
-                  Title
                 </p>
+              </CardBody>
 
-              </h4>
-              <p className={classes.cardProductDescription}>
+            </Card>
+          </GridItem>
 
-                Description
+          <GridItem xs={12} sm={12} md={4}>
+            <Card product className={classes.cardHover} color={'rose'}>
+              <CardHeader image className={classes.cardHeaderHover}>
 
-              </p>
-            </CardBody>
+                <img src={card3} alt="..."/>
 
-          </Card>
-        </GridItem>
+              </CardHeader>
 
-        <GridItem xs={12} sm={12} md={4}>
-          <Card product className={classes.cardHover} color={'rose'}>
-            <CardHeader image className={classes.cardHeaderHover}>
+              <CardBody>
+                <div className={classes.cardHoverUnder}>
+                  <Tooltip
+                    id="tooltip-top"
+                    title="View"
+                    placement="bottom"
+                    classes={{tooltip: classes.tooltip}}>
+                    <Button color="twitter" simple justIcon>
+                      <ArtTrack className={classes.underChartIcons}/>
+                    </Button>
+                  </Tooltip>
 
-              <img src={card3} alt="..."/>
+                  <Tooltip
+                    id="tooltip-top"
+                    title="Edit"
+                    placement="bottom"
+                    classes={{tooltip: classes.tooltip}}>
+                    <Button color="primary" simple justIcon>
+                      <Edit className={classes.underChartIcons}/>
+                    </Button>
+                  </Tooltip>
+                </div>
+                <h4 className={classes.cardProductTitle}>
 
-            </CardHeader>
+                  <p>
+                    Title
+                  </p>
 
-            <CardBody>
-              <div className={classes.cardHoverUnder}>
-                <Tooltip
-                  id="tooltip-top"
-                  title="View"
-                  placement="bottom"
-                  classes={{tooltip: classes.tooltip}}>
-                  <Button color="transparent" simple justIcon>
-                    <ArtTrack className={classes.underChartIcons}/>
-                  </Button>
-                </Tooltip>
+                </h4>
+                <p className={classes.cardProductDescription}>
 
-                <Tooltip
-                  id="tooltip-top"
-                  title="Edit"
-                  placement="bottom"
-                  classes={{tooltip: classes.tooltip}}>
-                  <Button color="danger" simple justIcon>
-                    <Edit className={classes.underChartIcons}/>
-                  </Button>
-                </Tooltip>
-              </div>
-              <h4 className={classes.cardProductTitle}>
+                  Description
 
-                <p>
-                  Title
                 </p>
+              </CardBody>
 
-              </h4>
-              <p className={classes.cardProductDescription}>
+            </Card>
+          </GridItem>
 
-                Description
+        </GridContainer>
 
-              </p>
-            </CardBody>
+        <div>
 
-          </Card>
-        </GridItem>
-
-      </GridContainer>
-
-
+          <GridContainer>
+            <GridItem xs={12}>
+              <Card plain>
+                <CardBody plain>
+                  <Timeline stories={stories} simple={false}/>
+                </CardBody>
+              </Card>
+            </GridItem>
+          </GridContainer>
+        </div>
+      </Grid>
     )
   }
 }
